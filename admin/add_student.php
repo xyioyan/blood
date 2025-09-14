@@ -46,8 +46,16 @@ $departments = $pdo->query("SELECT DISTINCT department FROM students ORDER BY de
                         <div class="form-row">
                             <div class="form-group">
                                 <label for="student_id">Student ID*</label>
-                                <input type="text" id="student_id" name="student_id" required>
-                                <small class="form-text">Unique identifier for the student</small>
+                                <div class="student-id-container">
+                                    <select id="student_id_prefix" class="student-id-prefix" required>
+                                        <option value="">Select Prefix</option>
+                                        <option value="C3S37401">C3S37401</option>
+                                        <option value="C3S37501">C3S37501</option>
+                                    </select>
+                                    <input type="text" id="student_id_suffix" class="student-id-suffix" maxlength="2" pattern="[0-9]{2}" placeholder="##" required>
+                                    <input type="hidden" id="student_id" name="student_id" required>
+                                </div>
+                                <small class="form-text">Choose prefix and enter last 2 digits (00-99)</small>
                             </div>
                             
                             <div class="form-group">
@@ -86,12 +94,11 @@ $departments = $pdo->query("SELECT DISTINCT department FROM students ORDER BY de
                             
                             <div class="form-group">
                                 <label for="department">Department*</label>
-                                <input type="text" id="department" name="department" list="departments" required>
-                                <datalist id="departments">
-                                    <?php foreach($departments as $dept): ?>
-                                        <option value="<?php echo htmlspecialchars($dept); ?>">
-                                    <?php endforeach; ?>
-                                </datalist>
+                                <select id="department" name="department" required>
+                                    <option value="">Select Department</option>
+                                    <option value="BCA">BCA (Bachelor of Computer Applications)</option>
+                                    <option value="B.Sc. CS">B.Sc. CS (Bachelor of Science in Computer Science)</option>
+                                </select>
                             </div>
                         </div>
                         
@@ -149,7 +156,89 @@ $departments = $pdo->query("SELECT DISTINCT department FROM students ORDER BY de
         </main>
     </div>
 
+    <style>
+        .student-id-container {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+        
+        .student-id-prefix {
+            flex: 2;
+            padding: 10px 12px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+        
+        .student-id-suffix {
+            flex: 1;
+            padding: 10px 12px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 14px;
+            text-align: center;
+            font-weight: bold;
+        }
+        
+        .student-id-preview {
+            font-weight: bold;
+            color: #2ecc71;
+            font-size: 14px;
+            margin-top: 5px;
+        }
+        
+        @media (max-width: 768px) {
+            .student-id-container {
+                flex-direction: column;
+                gap: 5px;
+            }
+            
+            .student-id-prefix,
+            .student-id-suffix {
+                flex: 1;
+                width: 100%;
+            }
+        }
+    </style>
+    
     <script>
+        // Student ID functionality
+        function updateStudentId() {
+            const prefix = document.getElementById('student_id_prefix').value;
+            const suffix = document.getElementById('student_id_suffix').value;
+            const studentIdField = document.getElementById('student_id');
+            
+            if (prefix && suffix && suffix.length === 2) {
+                const fullId = prefix + suffix;
+                studentIdField.value = fullId;
+                
+                // Show preview
+                let preview = document.querySelector('.student-id-preview');
+                if (!preview) {
+                    preview = document.createElement('div');
+                    preview.className = 'student-id-preview';
+                    document.querySelector('.student-id-container').appendChild(preview);
+                }
+                preview.textContent = 'Student ID: ' + fullId;
+            } else {
+                studentIdField.value = '';
+                const preview = document.querySelector('.student-id-preview');
+                if (preview) preview.remove();
+            }
+        }
+        
+        document.getElementById('student_id_prefix').addEventListener('change', updateStudentId);
+        document.getElementById('student_id_suffix').addEventListener('input', function() {
+            // Only allow numbers
+            this.value = this.value.replace(/[^0-9]/g, '');
+            // Pad with zero if single digit
+            if (this.value.length === 1) {
+                this.value = '0' + this.value;
+            }
+            updateStudentId();
+        });
+        
         // Toggle password visibility
         document.querySelector('.toggle-password').addEventListener('click', function() {
             const passwordInput = document.getElementById('password');
