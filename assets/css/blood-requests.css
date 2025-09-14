@@ -1,0 +1,286 @@
+/* blood-requests.css */
+.blood-request-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.blood-request-header {
+    text-align: center;
+    padding: 30px 0;
+    color: #fff;
+    background: linear-gradient(135deg, #ff5252 0%, #448AFF 100%);
+    border-radius: 10px;
+    margin-bottom: 30px;
+}
+
+.blood-request-header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.blood-request-header p {
+    font-size: 1.2rem;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.blood-request-card {
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    padding: 30px;
+    margin-bottom: 30px;
+}
+
+.blood-request-tabs {
+    display: flex;
+    border-bottom: 2px solid #eee;
+    margin-bottom: 20px;
+}
+
+.blood-request-tab {
+    padding: 12px 24px;
+    cursor: pointer;
+    font-weight: 600;
+    color: #666;
+    border-bottom: 3px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.blood-request-tab:hover {
+    color: #ff5252;
+}
+
+.blood-request-tab.active {
+    color: #ff5252;
+    border-bottom: 3px solid #ff5252;
+}
+
+.blood-request-tab-content {
+    display: none;
+}
+
+.blood-request-tab-content.active {
+    display: block;
+}
+
+.blood-request-form-group {
+    margin-bottom: 20px;
+}
+
+.blood-request-form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #555;
+}
+
+.blood-request-form-group input,
+.blood-request-form-group select,
+.blood-request-form-group textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: border-color 0.3s;
+}
+
+.blood-request-form-group input:focus,
+.blood-request-form-group select:focus,
+.blood-request-form-group textarea:focus {
+    outline: none;
+    border-color: #ff5252;
+    box-shadow: 0 0 0 2px rgba(255, 82, 82, 0.2);
+}
+
+.blood-request-form-group textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+.blood-request-btn {
+    display: inline-block;
+    padding: 14px 28px;
+    background: #ff5252;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+    text-align: center;
+    text-decoration: none;
+}
+
+.blood-request-btn:hover {
+    background: #e00000;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.blood-request-btn i {
+    margin-right: 8px;
+}
+
+.blood-request-btn-success {
+    background: #25D366;
+}
+
+.blood-request-btn-success:hover {
+    background: #128C7E;
+}
+
+.blood-request-list {
+    list-style: none;
+    padding: 0;
+}
+
+.blood-request-item {
+    padding: 20px;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    background: #f9f9f9;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.blood-request-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.blood-request-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.blood-request-title {
+    font-weight: 600;
+    font-size: 18px;
+    color: #ff5252;
+}
+
+.blood-request-status {
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.blood-request-status-pending {
+    background: #fff3cd;
+    color: #856404;
+}
+
+.blood-request-status-approved {
+    background: #d4edda;
+    color: #155724;
+}
+
+.blood-request-status-rejected {
+    background: #f8d7da;
+    color: #721c24;
+}
+
+.blood-request-status-completed {
+    background: #cce5ff;
+    color: #004085;
+}
+
+.blood-request-details {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.blood-request-detail-item {
+    margin-bottom: 8px;
+}
+
+.blood-request-detail-label {
+    font-weight: 600;
+    color: #666;
+}
+
+.blood-request-action-buttons {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+    flex-wrap: wrap;
+}
+
+.blood-request-message-preview {
+    background: #e3f2fd;
+    padding: 15px;
+    border-radius: 8px;
+    margin-top: 20px;
+    border-left: 4px solid #2196F3;
+}
+
+.blood-group-badge {
+    display: inline-block;
+    padding: 5px 12px;
+    border-radius: 20px;
+    color: white;
+    font-weight: 600;
+    font-size: 14px;
+    margin-left: 10px;
+}
+
+.blood-request-notification {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    padding: 15px 20px;
+    border-radius: 8px;
+    color: white;
+    font-weight: 600;
+    z-index: 1000;
+    opacity: 0;
+    transform: translateY(-20px);
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.blood-request-notification.success {
+    background: #25D366;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.blood-request-notification.error {
+    background: #ff5252;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.blood-request-notification.warning {
+    background: #FF9800;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@media (max-width: 768px) {
+    .blood-request-tabs {
+        flex-direction: column;
+    }
+    
+    .blood-request-details {
+        grid-template-columns: 1fr;
+    }
+    
+    .blood-request-action-buttons {
+        flex-direction: column;
+    }
+    
+    .blood-request-header h1 {
+        font-size: 2rem;
+    }
+}

@@ -1,0 +1,51 @@
+student_id,full_name,email,phone,blood_group,department,year_of_study,is_available
+STU001,John Smith,john.smith@example.com,9876500001,A+,Computer Science,1,Available
+STU002,Sarah Johnson,sarah.johnson@example.com,9876500002,B-,Mechanical,2,Unavailable
+STU003,Michael Williams,michael.williams@example.com,9876500003,O+,Electrical,3,Available
+STU004,Emily Brown,emily.brown@example.com,9876500004,AB+,Civil,4,Available
+STU005,David Jones,david.jones@example.com,9876500005,A-,Computer Science,2,Unavailable
+STU006,Olivia Garcia,olivia.garcia@example.com,9876500006,B+,Information Technology,1,Available
+STU007,James Miller,james.miller@example.com,9876500007,O-,Electronics,3,Available
+STU008,Emma Davis,emma.davis@example.com,9876500008,A+,Mechanical,2,Available
+STU009,William Rodriguez,william.rodriguez@example.com,9876500009,B-,Civil,1,Unavailable
+STU010,Ava Martinez,ava.martinez@example.com,9876500010,O+,Computer Science,4,Available
+STU011,Alexander Hernandez,alex.hernandez@example.com,9876500011,AB-,Electrical,3,Unavailable
+STU012,Sophia Lopez,sophia.lopez@example.com,9876500012,A-,Information Technology,2,Available
+STU013,Daniel Gonzalez,daniel.gonzalez@example.com,9876500013,B+,Electronics,1,Available
+STU014,Mia Wilson,mia.wilson@example.com,9876500014,O-,Mechanical,4,Unavailable
+STU015,Matthew Anderson,matthew.anderson@example.com,9876500015,A+,Civil,2,Available
+STU016,Isabella Thomas,isabella.thomas@example.com,9876500016,B-,Computer Science,3,Available
+STU017,Ethan Taylor,ethan.taylor@example.com,9876500017,O+,Electrical,1,Unavailable
+STU018,Amelia Moore,amelia.moore@example.com,9876500018,AB+,Electronics,4,Available
+STU019,Christopher Jackson,chris.jackson@example.com,9876500019,A-,Mechanical,2,Available
+STU020,Harper Martin,harper.martin@example.com,9876500020,B+,Civil,3,Unavailable
+STU021,Joseph Lee,joseph.lee@example.com,9876500021,O-,Computer Science,1,Available
+STU022,Evelyn Perez,evelyn.perez@example.com,9876500022,A+,Electrical,2,Unavailable
+STU023,Samuel White,samuel.white@example.com,9876500023,B-,Information Technology,4,Available
+STU024,Abigail Harris,abigail.harris@example.com,9876500024,O+,Electronics,3,Available
+STU025,Henry Clark,henry.clark@example.com,9876500025,AB-,Mechanical,1,Unavailable
+STU026,Elizabeth Lewis,elizabeth.lewis@example.com,9876500026,A-,Civil,2,Available
+STU027,Jack Young,jack.young@example.com,9876500027,B+,Computer Science,3,Available
+STU028,Sofia Hall,sofia.hall@example.com,9876500028,O-,Electrical,4,Unavailable
+STU029,Logan Allen,logan.allen@example.com,9876500029,A+,Information Technology,1,Available
+STU030,Charlotte King,charlotte.king@example.com,9876500030,B-,Electronics,2,Available
+STU031,Jacob Wright,jacob.wright@example.com,9876500031,O+,Mechanical,3,Unavailable
+STU032,Scarlett Scott,scarlett.scott@example.com,9876500032,AB+,Civil,4,Available
+STU033,Levi Green,levi.green@example.com,9876500033,A-,Computer Science,2,Available
+STU034,Victoria Adams,victoria.adams@example.com,9876500034,B+,Electrical,1,Unavailable
+STU035,David Baker,david.baker@example.com,9876500035,O-,Electronics,3,Available
+STU036,Luna Nelson,luna.nelson@example.com,9876500036,A+,Mechanical,4,Available
+STU037,Andrew Carter,andrew.carter@example.com,9876500037,B-,Civil,2,Unavailable
+STU038,Grace Mitchell,grace.mitchell@example.com,9876500038,O+,Computer Science,3,Available
+STU039,Joshua Perez,joshua.perez@example.com,9876500039,AB-,Electrical,1,Available
+STU040,Chloe Roberts,chloe.roberts@example.com,9876500040,A-,Information Technology,4,Unavailable
+STU041,Isaac Turner,isaac.turner@example.com,9876500041,B+,Electronics,2,Available
+STU042,Penelope Phillips,penelope.phillips@example.com,9876500042,O-,Mechanical,3,Available
+STU043,Anthony Campbell,anthony.campbell@example.com,9876500043,A+,Civil,1,Unavailable
+STU044,Nora Parker,nora.parker@example.com,9876500044,B-,Computer Science,2,Available
+STU045,Dylan Evans,dylan.evans@example.com,9876500045,O+,Electrical,3,Available
+STU046,Layla Edwards,layla.edwards@example.com,9876500046,AB+,Electronics,4,Unavailable
+STU047,Charles Collins,charles.collins@example.com,9876500047,A-,Mechanical,2,Available
+STU048,Hazel Stewart,hazel.stewart@example.com,9876500048,B+,Civil,3,Available
+STU049,Thomas Sanchez,thomas.sanchez@example.com,9876500049,O-,Computer Science,1,Unavailable
+STU050,Zoe Morris,zoe.morris@example.com,9876500050,A+,Electrical,2,Available
