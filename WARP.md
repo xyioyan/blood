@@ -27,10 +27,17 @@ php -S localhost:8000
 ```
 
 ### Configuration
-- Database configuration: `includes/config.php`
-- Default database: `blood_group_management`
-- Default credentials: localhost, root, no password
-- Timezone: Asia/Kolkata
+- **Database configuration**: `includes/config.php`
+- **Default database**: `blood_group_management`
+- **Default credentials**: localhost, root, no password
+- **Timezone**: Asia/Kolkata
+- **WhatsApp Group Setup**: Update `whatsapp_group_link` in `system_settings` table
+  ```sql
+  UPDATE system_settings SET 
+    whatsapp_group_link = 'https://chat.whatsapp.com/YOUR_GROUP_INVITE_LINK',
+    whatsapp_group_name = 'Your Blood Donors Group Name'
+    WHERE id = 1;
+  ```
 
 ## Architecture Overview
 
@@ -109,6 +116,16 @@ mysql -u root -p blood_group_management < database/blood_group_management\ \(1\)
 # Test student registration and check-in flow
 ```
 
+### WhatsApp Broadcast Testing
+```php
+# Test emergency broadcast workflow
+# 1. Admin → Blood Requests → View Request → Send WhatsApp Broadcast
+# 2. Test individual donor messaging (opens multiple WhatsApp windows)
+# 3. Test group broadcast (requires valid WhatsApp group link in settings)
+# 4. Test message copy/share functionality
+# 5. Verify broadcast history is recorded in database
+```
+
 ### PDF Report Generation
 The system uses TCPDF library for generating reports:
 - Student lists by blood group
@@ -117,10 +134,14 @@ The system uses TCPDF library for generating reports:
 - Files: `includes/tcpdf.php` and `assets/TCPDF-main/`
 
 ### WhatsApp Integration
-- Emergency broadcasts for blood requests
-- Group join functionality for donors
-- Configurable via admin settings
-- Files: `admin/whatsapp_broadcast.php`, `admin/send-whatsapp.php`
+- **Emergency broadcasts** for blood requests with individual and group messaging
+- **Group broadcast functionality** - send messages directly to WhatsApp groups
+- **Individual donor messaging** - bulk WhatsApp messaging to eligible donors
+- **Broadcast history tracking** - maintain records of all sent broadcasts
+- **Copy/share message functionality** - easy message distribution
+- **Group join functionality** for donors via public pages
+- **Configurable** via admin settings (group links, broadcast preferences)
+- **Files**: `admin/whatsapp_broadcast.php`, `includes/whatsapp-broadcast.php`
 
 ## Key Business Logic
 

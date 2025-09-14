@@ -14,6 +14,13 @@ class WhatsAppBroadcast {
         return $stmt->execute([$request_id, $message, $admin_id, $recipient_count]);
     }
     
+    public function getSystemSettings() {
+        $sql = "SELECT whatsapp_group_link, whatsapp_group_name, enable_whatsapp_broadcast FROM system_settings WHERE id = 1";
+        $stmt = $this->pdo->prepare($sql);
+        $stmt->execute();
+        return $stmt->fetch(PDO::FETCH_ASSOC);
+    }
+    
     public function getBroadcasts($request_id = null) {
         $sql = "SELECT wb.*, a.full_name as admin_name, br.patient_name 
                 FROM whatsapp_broadcasts wb 
